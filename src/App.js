@@ -1,16 +1,47 @@
 import React, { useState, useEffect } from 'react'
-import Header from './components/Header'
+import { Header } from './components/Header'
 import { Cards } from './components/Cards'
+import { Pagination } from './components/Pagination'
 import Container from 'react-bootstrap/Container'
 
 const App = () => {
+  const [loading, setLoading] = useState(true)
   const [character, setCharacter] = useState([{}])
+  const [pageUrl, setPageUrl] = useState(
+    'https://rickandmortyapi.com/api/character'
+  )
+  const [nextPageUrl, setNextPageUrl] = useState()
+  const [prevPageUrl, setPrevPageUrl] = useState()
+  
 
   useEffect(() => {
-    fetch('https://rickandmortyapi.com/api/character')
-      .then((response) => response.json())
-      .then((data) => setCharacter(data.results))
-  }, [])
+    const url = pageUrl
+    getData(url)
+  }, [pageUrl])
+
+  async function getData(url) {
+    const response = await fetch(url)
+    const data = await response.json()
+
+    setLoading(false)
+
+    setCharacter(data.results)
+    setNextPageUrl(data.info.next)
+    setPrevPageUrl(data.info.prev)
+    
+  }
+
+  function nextPage() {
+    setPageUrl(nextPageUrl)
+  }
+
+  function prevPage() {
+    setPageUrl(prevPageUrl)
+  }
+
+  if (loading) {
+    return 'Loading...'
+  }
 
   return (
     <Container className='mt-3'>
@@ -21,6 +52,7 @@ const App = () => {
       >
         {character.map((item) => (
           <Cards
+            key={item.id}
             id={item.id}
             name={item.name}
             status={item.status}
@@ -29,6 +61,10 @@ const App = () => {
           />
         ))}
       </div>
+      <Pagination
+        next={nextPageUrl ? nextPage : null }
+        previous={prevPageUrl ? prevPage : null}        
+      />
     </Container>
   )
 }
