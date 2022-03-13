@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { Header } from './components/Header'
-import { Cards } from './components/Cards'
-import { Pagination } from './components/Pagination'
+import {  Header } from './components/Header'
+import {  Cards } from './components/Cards'
+import {  Pagination } from './components/Pagination'
 import Container from 'react-bootstrap/Container'
+import { Player } from '@lottiefiles/react-lottie-player'
 
 const App = () => {
   const [loading, setLoading] = useState(true)
@@ -12,7 +13,6 @@ const App = () => {
   )
   const [nextPageUrl, setNextPageUrl] = useState()
   const [prevPageUrl, setPrevPageUrl] = useState()
-  
 
   useEffect(() => {
     const url = pageUrl
@@ -28,7 +28,6 @@ const App = () => {
     setCharacter(data.results)
     setNextPageUrl(data.info.next)
     setPrevPageUrl(data.info.prev)
-    
   }
 
   function nextPage() {
@@ -40,7 +39,14 @@ const App = () => {
   }
 
   if (loading) {
-    return 'Loading...'
+    return (
+      <Player
+        autoplay
+        loop
+        src='https://assets9.lottiefiles.com/packages/lf20_qqtavvc0.json'
+        style={{ height: 'auto', width: '500px' }}
+      ></Player>
+    )
   }
 
   return (
@@ -62,8 +68,8 @@ const App = () => {
         ))}
       </div>
       <Pagination
-        next={nextPageUrl ? nextPage : null }
-        previous={prevPageUrl ? prevPage : null}        
+        next={nextPageUrl ? nextPage : null}
+        previous={prevPageUrl ? prevPage : null}
       />
     </Container>
   )
