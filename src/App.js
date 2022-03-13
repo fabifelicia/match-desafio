@@ -56,7 +56,7 @@ const App = () => {
         style={{
           display: 'flex',
           flexDirection: 'column',
-          marginRight: '60px'
+          marginRight: '65px'
         }}
         className='mt-3 container-fluid'
       >
