@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Header } from './components/Header'
-import { Cards } from './components/Cards'
+import { Card } from './components/Card'
 import { Pagination } from './components/Pagination'
 import Container from 'react-bootstrap/Container'
 import { Player } from '@lottiefiles/react-lottie-player'
@@ -44,7 +44,7 @@ const App = () => {
       <Player
         autoplay
         loop
-        src='https://assets9.lottiefiles.com/packages/lf20_qqtavvc0.json'
+        src='https://lottie.host/7a62bdb8-e213-4b95-bf9d-2ea9fa7bc13f/8ruxZFKDwn.json'
         style={{ height: 'auto', width: '500px' }}
       ></Player>
     )
@@ -55,18 +55,16 @@ const App = () => {
       <Container
         style={{
           display: 'flex',
-          flexDirection: 'column',
-          marginRight: '65px'
-        }}
-        className='mt-3 container-fluid'
+          flexDirection: 'column',          
+          alignItems: 'center',          
+        }}        
       >
         <Header />
-        <div
-          className='mt-3'
-          style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)' }}
+        <div 
+          style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 15 }}
         >
           {character.map((item) => (
-            <Cards
+            <Card
               key={item.id}
               id={item.id}
               name={item.name}

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 
 export const Header = () => {
   return (
@@ -6,8 +6,8 @@ export const Header = () => {
       <h1
         style={{
           textAlign: 'center',
-          fontFamily: 'Roboto',
-          fontWeight: 700,
+          fontFamily: 'Righteous',
+          fontWeight: 400,
           fontSize: '5rem'
         }}
       >
