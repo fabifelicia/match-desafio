@@ -5,7 +5,7 @@ export function Card({ id, name, species }) {
   return (
     <section className={styles.card}>
       <div className={styles.container}>
-        <img className={styles.img}       
+        <img className={styles.img} alt="character"      
           src={`https://rickandmortyapi.com/api/character/avatar/${id}.jpeg`}
         />
       </div>      

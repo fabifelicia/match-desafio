@@ -1,0 +1,21 @@
+.list {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.activeButton {  
+  color: #000;  
+  border: none;  
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.activeButton:hover {
+  color: #555;
+  transition: 5ms;
+}
+
+.disableButton {
+  opacity: 0;
+}

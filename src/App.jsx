@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { Header } from './components/Header'
 import { Card } from './components/Card'
 import { Pagination } from './components/Pagination'
-import Container from 'react-bootstrap/Container'
 import { Player } from '@lottiefiles/react-lottie-player'
 
 const App = () => {
@@ -52,7 +51,7 @@ const App = () => {
 
   return (
     <>
-      <Container
+      <div
         style={{
           display: 'flex',
           flexDirection: 'column',          
@@ -72,7 +71,7 @@ const App = () => {
             />
           ))}
         </div>
-      </Container>
+      </div>
       <Pagination
         next={nextPageUrl ? nextPage : null}
         previous={prevPageUrl ? prevPage : null}
