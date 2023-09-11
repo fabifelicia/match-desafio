@@ -9,18 +9,16 @@ export const Pagination = ({ next, previous }) => {
       <li>
         {previous ? (
           <button className={styles.activeButton} onClick={previous}>
-            <BsArrowLeftCircle />
+            <BsArrowLeftCircle size={40} />
           </button>
         ) : (
-          <button className={styles.disableButton}>
-            <BsArrowLeftCircle />
-          </button>
+          <button className={styles.disableButton}></button>
         )}
       </li>
       <li>
         {next ? (
           <button className={styles.activeButton} onClick={next}>
-            <BsArrowRightCircle />
+            <BsArrowRightCircle size={40} />
           </button>
         ) : (
           <button className={styles.disableButton}></button>
