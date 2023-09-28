@@ -18,7 +18,6 @@ Created a list of cards using the Rick and Morty api, with pagination.
 
 - React
 - Fetch api
-- Bootstrap for styling
 - Google Fonts
 - [API](https://rickandmortyapi.com/)
 - Pagination
