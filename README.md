@@ -11,7 +11,7 @@ Created a list of cards using the Rick and Morty api, with pagination.
 
 ### Links
 
-- Live Site URL: (https://rick-and-morty-qyirn1qxr-fabifelicia.vercel.app/)
+- Live Site URL: (https://rick-and-morty-eight-ashy.vercel.app/)
 
 
 ### Built with
