@@ -9,7 +9,11 @@
    flex-direction: column;
    margin-bottom: 10px;   
    box-shadow: 5px 5px 10px #22222270;
-   
+   transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+   transform: translateX(-10px);
 }
 
 .container {
